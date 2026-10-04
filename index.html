@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Appreciation for My Team ✨</title>
+  <meta name="description" content="Halaman apresiasi dan terima kasih khusus untuk rekan-rekan tim hebat.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Cormorant Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Canvas Confetti for Celebration -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+  <!-- Ambient Animated Pastel Glows -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <main class="page-container">
+    <!-- Header Section -->
+    <header class="hero-header">
+      <div class="tag-pill">
+        <span class="sparkle-icon">✨</span>
+        <span>A Little Note</span>
+      </div>
+      <h1 class="hero-title">Terima Kasih, <span class="gradient-text">Kalian Luar Biasa!</span> 🌸</h1>
+      <p class="hero-subtitle">
+        Setiap karya hebat selalu berakar dari kerja sama yang hangat. 
+        Pilih kartu milikmu untuk membuka pesan khusus di dalamnya.
+      </p>
+    </header>
+
+    <!-- 3 Member Cards Grid -->
+    <section class="team-grid" id="teamCardsContainer">
+      <!-- Cards will be populated dynamically from script.js config -->
+    </section>
+
+    <!-- Footer Note -->
+    <footer class="app-footer">
+      <p>Dibuat dengan segenap rasa bangga & terima kasih 💛</p>
+    </footer>
+  </main>
+
+  <!-- Modal 1: Password Input Dialog -->
+  <div class="modal-overlay" id="passwordModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="btn-close-modal" id="closePasswordModalBtn" title="Tutup modal">&times;</button>
+      
+      <div class="modal-header">
+        <div class="avatar-mini-wrapper">
+          <img id="modalMemberAvatar" src="" alt="Foto Rekan Tim" class="modal-avatar">
+          <span class="lock-indicator" id="modalLockBadge">🔒</span>
+        </div>
+        <h3 id="modalMemberName" class="modal-name">Nama Anggota</h3>
+        <p id="modalMemberRole" class="modal-role">Role Anggota</p>
+      </div>
+
+      <div class="modal-body">
+        <p class="instruction-text">
+          Ketik <strong>tanggal lahirmu</strong> untuk membuka kunci surat ini:
+        </p>
+        
+        <form id="passwordForm" class="password-form" onsubmit="return false;">
+          <div class="input-group">
+            <span class="input-icon">🎂</span>
+            <input 
+              type="password" 
+              id="birthdateInput" 
+              class="password-input" 
+              placeholder="Contoh: 15082000" 
+              autocomplete="off"
+              maxlength="10"
+            >
+            <button type="button" class="btn-toggle-vis" id="togglePasswordVisBtn" title="Lihat angka">👁️</button>
+          </div>
+          
+          <div class="hint-container">
+            <span class="hint-text">💡 Format: <code>DDMMYYYY</code> (misal: 17 Agustus 1999 → <code>17081999</code>)</span>
+          </div>
+
+          <p class="error-msg" id="errorMessage" style="display: none;">
+            ⚠️ Ups! Tanggal lahir belum tepat. Coba cek lagi ya!
+          </p>
+
+          <button type="submit" class="btn-primary" id="btnSubmitPassword">
+            <span>Buka Surat Rahasia</span>
+            <span class="btn-arrow">💌</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Opened Letter & Appreciation Message -->
+  <div class="modal-overlay" id="letterModal" aria-hidden="true">
+    <div class="letter-card-wrapper">
+      <div class="letter-card" id="letterCardContent">
+        <button class="btn-close-modal" id="closeLetterModalBtn" title="Tutup surat">&times;</button>
+        
+        <div class="letter-stamp">
+          <span>💌 SPECIAL NOTE</span>
+        </div>
+
+        <div class="letter-to-badge">
+          <span>Khusus untuk:</span>
+          <h2 id="letterRecipientName" class="letter-recipient">Nama Rekan</h2>
+          <span id="letterRecipientRole" class="letter-role-tag">Role</span>
+        </div>
+
+        <div class="letter-divider"></div>
+
+        <div class="letter-content" id="letterBody">
+          <!-- Letter text inserted dynamically -->
+        </div>
+
+        <div class="letter-footer">
+          <p class="letter-closing">Send warm regards,</p>
+          <div class="signature">Laila ✨</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
+</body>
+</html>
